@@ -16,4 +16,5 @@ public class Account {
 
     @Column(name = "balance")
     private Double balance;
+
 }
