@@ -1,3 +1,5 @@
+Стек проекта: Java 17, SpringBoot 3, PostgreSQL, Maven, REST API, Docker.
+
 Перед запуском приложения нужно запустить файл docker-compose.yaml, чтобы поднять базу данных.
 
 Для корректной работы приложения нужен JDK 21.
