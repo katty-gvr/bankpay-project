@@ -1,9 +1,9 @@
-package ru.bankpay.bankpay.user;
+package ru.bankpay.bankpay.user.dto;
 
 import org.springframework.stereotype.Component;
-import ru.bankpay.bankpay.user.User;
-import ru.bankpay.bankpay.user.dto.UserCreateRequest;
+import ru.bankpay.bankpay.user.entity.User;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Component
@@ -15,10 +15,16 @@ public class UserMapper {
             .login(request.getLogin())
             .password(request.getPassword())
             .birthday(request.getBirthday())
-            .emails(Set.of(request.getEmail()))
+            .emails(new HashSet<>(Set.of(request.getEmail())))
             .phones(Set.of(request.getPhoneNumber()))
             .build();
     }
 
-
+    public static UserSearchResponse mapUserToSearchResponse(User user) {
+        return UserSearchResponse.builder()
+            .id(user.getId())
+            .fullName(user.getFullName())
+            .birthday(user.getBirthday())
+            .build();
+    }
 }

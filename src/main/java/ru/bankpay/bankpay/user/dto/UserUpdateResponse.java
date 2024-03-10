@@ -5,8 +5,6 @@ import lombok.Data;
 
 @Data
 @Builder
-public class UserCreateResponse {
-    Long id;
-    String fullName;
-    Double initialAmount;
+public class UserUpdateResponse {
+    String message;
 }

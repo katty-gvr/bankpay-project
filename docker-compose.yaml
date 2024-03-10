@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:14.10'
+    environment:
+      - 'POSTGRES_DB=bankpay'
+      - 'POSTGRES_PASSWORD=bankpay'
+      - 'POSTGRES_USER=bankpay'
+    ports:
+      - "52012:5432"

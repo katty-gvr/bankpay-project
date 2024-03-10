@@ -1,4 +1,4 @@
-package ru.bankpay.bankpay.user;
+package ru.bankpay.bankpay.user.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -50,7 +50,4 @@ public class User {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id")
     private Account account;
-
-
-
 }

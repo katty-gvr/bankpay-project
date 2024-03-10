@@ -15,15 +15,18 @@ create table if not exists users (
 create table if not exists emails (
     id           serial  primary key,
     user_id      bigint  not null references users (id) on delete cascade,
-    email        varchar not null,
-
-    constraint user_email_unique UNIQUE (user_id, email)
+    email        varchar not null unique
 );
 
 create table if not exists phones (
     id           serial  primary key,
     user_id      bigint  not null references users (id) on delete cascade,
-    phone_number varchar not null,
+    phone_number varchar not null unique
+);
 
-    constraint user_phone_unique UNIQUE (user_id, phone_number)
+create table if not exists payments (
+    id           serial primary key,
+    from_acc_id  bigint not null references accounts (id),
+    to_acc_id    bigint not null references accounts (id),
+    amount       real   not null
 );
